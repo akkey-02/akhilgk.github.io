@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
 
-const navbar = () => {
+const NavBar = () => {
 	const [nav, setNav] = useState(false);
 
 	const [shadow, setShadow] = useState(false);
@@ -132,4 +132,4 @@ const navbar = () => {
 	);
 };
 
-export default navbar;
+export default NavBar;
