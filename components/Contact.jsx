@@ -21,16 +21,36 @@ const Contact = () => {
 					</p> */}
 					<div className="flex items-center justify-between my-2 w-full max-w-[300px] sm:w-[80%]">
 						<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-							<FaLinkedin />
+							<a
+								href="https://www.linkedin.com/in/akhil-gopakumar-3b570918a/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FaLinkedin />
+							</a>
 						</div>
 						<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-							<FaTwitter />
+							<a
+								href="https://twitter.com/Akhilgopakumar2"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FaTwitter />
+							</a>
 						</div>
 						<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-							<FaGithub />
+							<a
+								href="https://github.com/akkey-02"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FaGithub />
+							</a>
 						</div>
 						<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-							<FaEnvelope />
+							<a href="mailto:akhilgkumar01@gmail.com?subject=subject&cc=cc@example.com">
+								<FaEnvelope />
+							</a>
 						</div>
 					</div>
 				</div>

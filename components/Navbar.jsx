@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
 
-const navbar = () => {
+const NavBar = () => {
 	const [nav, setNav] = useState(false);
 
 	const [shadow, setShadow] = useState(false);
@@ -108,20 +108,40 @@ const navbar = () => {
 						</ul>
 						<div className="pt-40">
 							<p className="uppercase tracking-widest text-[#5651e5]">
-								Let's Connect
+								{"Let's Connect"}
 							</p>
 							<div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
 								<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-									<FaLinkedin />
+									<a
+										href="https://www.linkedin.com/in/akhil-gopakumar-3b570918a/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<FaLinkedin />
+									</a>
 								</div>
 								<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-									<FaTwitter />
+									<a
+										href="https://twitter.com/Akhilgopakumar2"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<FaTwitter />
+									</a>
 								</div>
 								<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-									<FaGithub />
+									<a
+										href="https://github.com/akkey-02"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<FaGithub />
+									</a>
 								</div>
 								<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-									<FaEnvelope />
+									<a href="mailto:akhilgkumar01@gmail.com?subject=subject&cc=cc@example.com">
+										<FaEnvelope />
+									</a>
 								</div>
 							</div>
 						</div>
@@ -132,4 +152,4 @@ const navbar = () => {
 	);
 };
 
-export default navbar;
+export default NavBar;

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
@@ -10,24 +11,44 @@ const Main = () => {
 						Lets Build Something Better
 					</p>
 					<h1 className="py-4 text-gray-700">
-						Hi I'm <span className="text-[#5651e5]">Akhil</span>
+						{"Hi I'm"} <span className="text-[#5651e5]">Akhil</span>
 					</h1>
 					<h1 className="py-2 text-gray-700">A Full-Stack Developer</h1>
 					<p className="py-4 text-gray-600 max-w-[70%] m-auto">
-						I'm a full-stack web developer
+						{"I'm a full-stack web developer"}
 					</p>
 					<div className="flex items-center justify-between m-auto py-4 max-w-[330px]">
 						<div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-							<FaLinkedin />
+							<a
+								href="https://www.linkedin.com/in/akhil-gopakumar-3b570918a/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FaLinkedin />
+							</a>
 						</div>
 						<div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-							<FaTwitter />
+							<a
+								href="https://twitter.com/Akhilgopakumar2"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FaTwitter />
+							</a>
 						</div>
 						<div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-							<FaGithub />
+							<a
+								href="https://github.com/akkey-02"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FaGithub />
+							</a>
 						</div>
 						<div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-							<FaEnvelope />
+							<a href="mailto:akhilgkumar01@gmail.com?subject=subject&cc=cc@example.com">
+								<FaEnvelope />
+							</a>
 						</div>
 					</div>
 				</div>
