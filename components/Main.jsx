@@ -14,7 +14,11 @@ const Main = () => {
 						{"I'm a full-stack web developer"}
 					</p>
 					<div className="flex items-center justify-center m-auto py-4 max-w-[330px]">
-						<a href="" target="_blank">
+						<a
+							href="https://docs.google.com/document/d/1HnyJ5N08E9h6LuchOXN-mMeSo-2eTLyG/edit?usp=sharing&ouid=102588667644885675332&rtpof=true&sd=true"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<p className="text-center py-3 rounded-3xl bg-[#5651e5] text-white px-16 font-bold text-lg cursor-pointer">
 								Resume
 							</p>
