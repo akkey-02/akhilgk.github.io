@@ -1,13 +1,71 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const NavBar = () => {
 	const [nav, setNav] = useState(false);
-
 	const [shadow, setShadow] = useState(false);
+	const [navBg, setNavBg] = useState("transparent");
+	const [navColor, setNavColor] = useState("#ecf0f3");
+
+	const router = useRouter();
+
+	useEffect(() => {
+		if (router.asPath === "/" || router.asPath.includes("/#")) {
+			setNavColor("#1f2937");
+		} else {
+			setNavColor("#ecf0f3");
+		}
+
+		window.onscroll = function () {
+			if (router.asPath === "/" || router.asPath.includes("/#")) {
+				setNavBg("#ecf0f3");
+			} else {
+				setNavBg("transparent");
+			}
+
+			if (
+				router.asPath !== "/" &&
+				!router.asPath.includes("/#") &&
+				window.scrollY >= 250
+			) {
+				console.log(router.asPath !== "/" || !router.asPath.includes("/#"));
+				setNavColor("#1f2937");
+				setNavBg("#ecf0f3");
+			} else if (!router.asPath.includes("/#") && window.scrollY >= 250) {
+				console.log("condition 2");
+				setNavColor("#1f2937");
+				setNavBg("#ecf0f3");
+			} else if (
+				!router.asPath.includes("/#") &&
+				router.asPath !== "/" &&
+				window.scrollY <= 250
+			) {
+				console.log("condition 3");
+				setNavColor("#ecf0f3");
+			}
+		};
+
+		// if (
+		// 	(router.asPath === "/abc" ||
+		// 		router.asPath === "/prop" ||
+		// 		router.asPath === "/abc-cars" ||
+		// 		router.asPath === "abc-portal" ||
+		// 		router.asPath === "/insurance" ||
+		// 		router.asPath === "/liferay" ||
+		// 		router.asPath === "/meals-on-wheels" ||
+		// 		router.asPath === "/network" ||
+		// 		router.asPath === "/plugins") &&
+		// 	window.scrollY >= 220
+		// ) {
+		// 	console.log("white");
+		// 	setNavBg("#ecf0f3");
+		// 	setNavColor("#1f2937");
+		// }
+	}, [router]);
 
 	const handleNavBar = () => {
 		setNav(!nav);
@@ -15,15 +73,16 @@ const NavBar = () => {
 
 	useEffect(() => {
 		const handleShadow = () => {
-			if (window.scrollY >= 90) setShadow(true);
-			else setShadow(false);
+			if (window.scrollY >= 90) {
+				setShadow(true);
+			} else setShadow(false);
 		};
-
 		window.addEventListener("scroll", handleShadow);
-	}, []);
+	}, [router]);
 
 	return (
 		<div
+			style={{ background: `${navBg}` }}
 			className={
 				shadow
 					? "fixed w-full h-20 shadow-xl z-[100]"
@@ -33,7 +92,7 @@ const NavBar = () => {
 			<div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
 				<Image src="/logo1.png" alt="/" width="125" height="60" />
 				<div>
-					<ul className="hidden md:flex">
+					<ul style={{ color: `${navColor}` }} className="hidden md:flex">
 						<Link href="/#main">
 							<li className="ml-10 text-sm uppercase hover:border-b">Home</li>
 						</Link>
@@ -83,27 +142,35 @@ const NavBar = () => {
 							</div>
 						</div>
 						<div className="border-b border-gray-300 my-4">
-							<p className="w-[85%] md:w-[90%] py-4">
-								Lets build some legendary together
-							</p>
+							<p className="w-[85%] md:w-[90%] py-4">Welcome to my Portfolio</p>
 						</div>
 					</div>
 					<div className="py-4 flex flex-col">
 						<ul className="uppercase">
-							<Link href="/">
-								<li className="py-4 text-sm">Home</li>
+							<Link href="/#main">
+								<li onClick={() => setNav(false)} className="py-4 text-sm">
+									Home
+								</li>
 							</Link>
-							<Link href="/">
-								<li className="py-4 text-sm">About Me</li>
+							<Link href="/#about">
+								<li onClick={() => setNav(false)} className="py-4 text-sm">
+									About Me
+								</li>
 							</Link>
-							<Link href="/">
-								<li className="py-4 text-sm">Skills</li>
+							<Link href="/#skills">
+								<li onClick={() => setNav(false)} className="py-4 text-sm">
+									Skills
+								</li>
 							</Link>
-							<Link href="/">
-								<li className="py-4 text-sm">Projects</li>
+							<Link href="/#projects">
+								<li onClick={() => setNav(false)} className="py-4 text-sm">
+									Projects
+								</li>
 							</Link>
-							<Link href="/">
-								<li className="py-4 text-sm">Contact</li>
+							<Link href="/#contacts">
+								<li onClick={() => setNav(false)} className="py-4 text-sm">
+									Contact
+								</li>
 							</Link>
 						</ul>
 						<div className="pt-40">
